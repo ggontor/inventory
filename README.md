@@ -1,1 +1,2 @@
 # inventory
+gaskiya yafi kobo

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Delivery Form</title>
+	
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.css" />
+	<link rel="stylesheet" href="css/editable-listview.css">	
+	<script src="js/jquery.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.js"></script>
+    <script src="js/editable-listview.js"></script>
+
+    <style>
+        .ui-mobile [data-role=header],.ui-mobile [data-role=footer]{
+            background-color: rgba(0, 187, 40, 0.71);
+            color: #ffffff;
+            text-shadow: 1px 1px 12px #000;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="DeliveryNote_screen">
+        <div data-role="header" data-position="fixed">
+            <a href="#" data-icon="back" data-rel="back" class="ui-btn-left">Cancel</a>
+            <h1>Accentric Environmental Solutions</h1>
+            <h3>Record Delivery Details</h3>
+    
+        </div>
+<div data-role="main" class="ui-content"> 
+    <div data-role="fieldcontain">
+            <label for="name">FirstName</label> 
+            <input type="text" id="firstname" placeholder="enter first name">
+        </div>
+    <div data-role="fieldcontain">
+        <label for="lastname">LastName</label> 
+        <input type="text" id="lastname" placeholder="enter lastname">
+    </div> 
+    <div data-role="fieldcontain">
+            <label for="custemail">Email</label> 
+            <input type="email" id="custemail" placeholder="enter emailaddress">
+        </div>
+    <div data-role="fieldcontain">
+        <label for="address">Address</label> 
+        <textarea type="text" id="address" placeholder="enter a address"></textarea> 
+    </div>          
+    <div style="padding: 20px">
+        
+        <ul data-role="listview" data-editable="true" data-editable-type="complex" data-editable-form="editing-form" data-title="Items" data-empty-title="No Items">
+            <li>
+            </li>
+        </ul>
+        <form id="editing-form" data-editable-form="true">
+            <input type="text" data-item-name="ItemsNo" data-item-template="<h3><span id='ItemsNo'>%%</span></h3>">
+            <input type="text" data-item-name="ItemsDesc" data-item-template="<p><em>Description:</em> <strong><span id='ItemsDesc'>%%</span></strong></p>">
+            <button class="ui-btn ui-corner-all" data-add-button="true">Add</button>
+            <button class="ui-btn ui-corner-all" data-clear-button="true">Clear</button>
+        </form>
+     <div data-role="fieldcontain">
+            <button id="snapPicture" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-camera">
+            <img style="display:none;width:70px;height:70px;" id="myPhoto" src=""/>
+                   
+       </div> 
+
+    <label><input type="checkbox" name="check1" id="termscons"/>Read Terms and Conditions </label>
+
+    <div id="info" class="ui-content" style="max-width: 350px;display:none"  data-theme="a">
+            <p>Here is a <strong>tiny popup</strong> being used like a tooltip. The text will wrap to multiple lines as needed.</p>
+            <input type="checkbox" name="checkbox-0" id="checkbox-0" class="custom" />
+            <label for="checkbox-0">I agree</label>
+        </div>
+        <button type="submit" id="savecustdetails" aria-label="Send">Submit</button>
+ 
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h1>Copyrights 2018</h1>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+ 
+  <script src="js/main.js"></script> 
+<!--   <script type="text/javascript" src="cordova.js"></script>
+ --></body>
+</html>
